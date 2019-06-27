@@ -7,8 +7,13 @@
     <title>Train Schedule</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+  
 
 
 
@@ -26,13 +31,13 @@
         </div>      
      </nav>
 </div>
-<script src ="assets/javascript/javascript.js"></script>
+
 
 <br>
 <br>
 <!--Train schedule container-->
 <div class= "container hoverable z-depth-5" id = "schedule-container">
-        <table class = "centered highlight"> 
+        <table class = "centered highlight" id= "schedule-table"> 
                 <thead>
                   <tr class="brown lighten-2">
                     <th>Train Name</th>
@@ -54,27 +59,7 @@
                     <td>Text</td>
                     <td>Text</td>
                   </tr>
-                  <tr>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>Text</td>
-                  </tr>
-                  <tr>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                      </tr>
-                      <tr>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                        <td>Text</td>
-                      </tr>
+                 
                       
                  
                 </tbody>
@@ -84,27 +69,31 @@
 
             <br>
             <br>
+
+
             <div class="container">
 
-            
+     
+              
+<!---Submission Box-->              
 <div id = "form">
         <form action="/action_page.php">
-          <label for="fname">Train Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="">
+          <label for="train-name">Train Name</label>
+          <input type="text" id="train-name" name="trainname" placeholder="">
       
           <label for="lname">Destination</label>
-          <input type="text" id="lname" name="lastname" placeholder="">
-          <label for="lname">First Train Time (HH:mm - military time)</label>
-          <input type="text" id="lname" name="lastname" placeholder="">
-          <label for="lname">Frequency (min)</label>
-          <input type="text" id="lname" name="lastname" placeholder="">
-          <input type="submit" value="Submit">
+          <input type="text" id="destination" name="info" placeholder="">
+          <label for="time">First Train Time (HH:mm - military time)</label>
+          <input type="text" id="first-time" name="info" placeholder="">
+          <label for="time">Frequency (min)</label>
+          <input type="text" id="frequency" name="info" placeholder="">
+          <input type="submit" id="add-train-btn" value="Input">
         </form>
       </div>
     </div>
 
 
 
-
+    <script src ="assets/javascript/javascript.js"></script>
  </body>
 </html>

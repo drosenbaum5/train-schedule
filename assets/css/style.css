@@ -10,7 +10,7 @@ body {
 
     opacity: .7;
     margin: auto;
-    border-radius: 1px;
+    /* border-radius: 1px; */
     
 }
 
@@ -23,7 +23,7 @@ img {
     height: 165px;
     margin-top: 7px;
     margin-left: 10px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     border-color: white;
     
    
@@ -33,7 +33,7 @@ img {
 #schedule-container {
 
     opacity: .8;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-size: 1.2em;
     overflow: auto;
     border-color: rgb(199, 199, 199);
@@ -50,7 +50,7 @@ input[type=text], select {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     box-sizing: border-box;
     
   }
