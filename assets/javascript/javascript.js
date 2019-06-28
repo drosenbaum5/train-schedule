@@ -89,7 +89,7 @@ database.ref().on("child_added", function(childSnapshot) {
    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
    // Difference between the times
-   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+   var diffTime = moment().diff(moment(firstTimeConverted, "HH:mm"), "minutes");
    console.log("DIFFERENCE IN TIME: " + diffTime);
 
    // Time apart (remainder)
@@ -101,7 +101,7 @@ database.ref().on("child_added", function(childSnapshot) {
    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
    // Next Train
-   var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+   var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm a");
    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 
@@ -110,8 +110,10 @@ database.ref().on("child_added", function(childSnapshot) {
     $("<td>").text(trainName),
     $("<td>").text(trainDestination),
     $("<td>").text(trainFrequency),
-    $("<td>").text(firstTrainTime),
+    // $("<td>").text(firstTrainTime),
     $("<td>").text(nextTrain),
+    $("<td>").text(tMinutesTillTrain),
+
   
   );
   console.log(JSON.stringify(newRow,null,2))
