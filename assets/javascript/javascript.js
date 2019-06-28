@@ -26,7 +26,7 @@ var firebaseConfig = {
     // Grabs user input
     var trainName = $("#train-name").val().trim();
     var trainDestination = $("#destination").val().trim();
-    var firstTrainTime = moment($("first-time").val().trim(), "MM/DD/YYYY").format("X");
+    var firstTrainTime = moment($("first-time").val(), "MM/DD/YYYY").format("LT");
     var trainFrequency = $("#frequency").val().trim();
   
     // Creates local "temporary" object for holding train data
@@ -60,6 +60,10 @@ database.ref().on("child_added", function(childSnapshot) {
     var firstTrainTime = childSnapshot.val().start;
     var trainFrequency = childSnapshot.val().rate;
 
+    console.log(trainName);
+    console.log(trainDestination);
+    console.log(firstTrainTime);
+    console.log(trainFrequency);
 
 
 
@@ -70,9 +74,9 @@ database.ref().on("child_added", function(childSnapshot) {
     $("<td>").text(trainDestination),
     $("<td>").text(firstTrainTime),
     $("<td>").text(trainFrequency),
-    $("<td>").text(empRate),
-    $("<td>").text(empBilled)
+  
   );
+  console.log(JSON.stringify(newRow,null,2))
 
   // Append the new row to the table
   $("schedule-table > tbody").append(newRow);
